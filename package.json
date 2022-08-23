@@ -1,0 +1,63 @@
+{
+  "name": "@giancosta86/jardinero-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript kit for creating JardineroJS linguistic plugins",
+  "keywords": [
+    "Jardinero",
+    "custom",
+    "plugins",
+    "development",
+    "kit"
+  ],
+  "homepage": "https://github.com/giancosta86/JardineroJS-sdk#readme",
+  "bugs": "https://github.com/giancosta86/JardineroJS-sdk/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Gianluca Costa",
+    "email": "gianluca@gianlucacosta.info",
+    "url": "https://gianlucacosta.info/"
+  },
+  "files": [],
+  "main": "dist",
+  "types": "dist",
+  "repository": "giancosta86/JardineroJS-sdk",
+  "scripts": {
+    "clean": "rimraf dist giancosta86-*.tgz",
+    "clean:all": "yarn clean && rimraf node_modules",
+    "format": "prettier --write .",
+    "prepack": "yarn check-all && yarn build",
+    "check-all": "yarn check-format && yarn lint",
+    "check-format": "prettier --check .",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.cjs,.mjs",
+    "build": "yarn compile-ts",
+    "compile-ts": "tsc",
+    "watch": "yarn compile-ts --watch"
+  },
+  "dependencies": {
+    "@giancosta86/flatten-transform": "^1.0.0",
+    "@giancosta86/format-error": "^1.0.1",
+    "@giancosta86/sqlite-writable": "^1.0.0",
+    "@giancosta86/typed-env": "^2.0.2",
+    "@giancosta86/unified-logging": "^1.0.2",
+    "@giancosta86/wiki-transform": "^1.0.0",
+    "@giancosta86/worker-transform": "^1.0.1",
+    "better-sqlite3": "^7.6.2"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.218",
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^16",
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
+    "@typescript-eslint/parser": "^5.30.3",
+    "eslint": "^8.18.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=16.16.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
