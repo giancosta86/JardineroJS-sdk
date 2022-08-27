@@ -48,7 +48,7 @@ In order to create a _linguistic plugin_ for JardineroJS, you'll need to:
    import { LinguisticPlugin } from "@giancosta86/jardinero-sdk";
 
    export class MyLinguisticPlugin extends LinguisticPlugin {
-     //TODO: here implement the abstract methods
+     //Here, implement the abstract methods
    }
    ```
 
