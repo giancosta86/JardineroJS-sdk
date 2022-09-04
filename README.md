@@ -72,7 +72,7 @@ In order to create a _linguistic plugin_ for JardineroJS, you'll need to:
 
 - `createPageTransforms()`: an array containing one or more **Transform** streams; this chain of transforms receives the _wiki pages_ from JardineroJS and must return _objects that will be serialized to the plugin's SQLite db_
 
-- `createSqliteWritableBuilder`: must return a `SqliteWritableBuilder` - provided by the [sqlite-writable](https://github.com/giancosta86/sqlite-writable) library.
+- `createSqliteWritableBuilder()`: must return a `SqliteWritableBuilder` - provided by the [sqlite-writable](https://github.com/giancosta86/sqlite-writable) library.
 
   In particular, you'll probably need to call a few methods of the newly-instantiated builder, before returning it:
 
@@ -86,7 +86,13 @@ In order to create a _linguistic plugin_ for JardineroJS, you'll need to:
 
 - in lieu of an _array_, a method can actually return _just a single item_, with no array notation. In both cases, the above sync/async note still applies
 
-### Logging
+## Optional methods
+
+Optionally, a plugin can override predefined behavior:
+
+- `translateQueryToSql()`: since every Jardinero plugin reads data from its dedicated SQLite database, this method allows you to translate the input query written by the user, within the UI, into the actual SQL code executed by the db - thus enabling the creation of arbitrary domain-specific languages. It can return a `string` or a `Promise<string>` - whichever you prefer. By default, it just returns the input query, assuming the user is already writing SQL code.
+
+## Logging
 
 Your method implementations can access the `this.logger` field, whose `Logger` type is declared by the [unified-logging](https://github.com/giancosta86/unified-logging) library.
 

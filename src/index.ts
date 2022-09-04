@@ -18,4 +18,8 @@ export abstract class LinguisticPlugin {
   abstract createPageTransforms(): PlainOrPromise<SingleOrArray<Transform>>;
 
   abstract createSqliteWritableBuilder(): PlainOrPromise<SqliteWritableBuilder>;
+
+  translateQueryToSql(query: string): PlainOrPromise<string> {
+    return query;
+  }
 }

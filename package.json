@@ -1,6 +1,6 @@
 {
   "name": "@giancosta86/jardinero-sdk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "TypeScript kit for creating JardineroJS linguistic plugins",
   "keywords": [
     "Jardinero",
