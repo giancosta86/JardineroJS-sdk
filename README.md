@@ -24,6 +24,8 @@ Basically speaking, a plugin is a concrete subclass of `LinguisticPlugin`, provi
 
   - the `SqliteWritableBuilder` - from the [sqlite-writable](https://github.com/giancosta86/sqlite-writable) library - used to create the `Writable` stream that _will store the above data to the SQLite db_
 
+But there is more! 🥳 The SDK actually includes a lot of utilities for both **implementing** and **testing** your plugins: please, feel free to explore the source code for both the SDK and the main plugins - especially [CervantesJS](https://github.com/giancosta86/CervantesJS) for Spanish and [RayonJS](https://github.com/giancosta86/RayonJS) for French.
+
 ## Installation
 
 ```bash
